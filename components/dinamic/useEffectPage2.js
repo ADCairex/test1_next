@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react';
 export default function Page2() {
 
     const [word, setWord] = useState('');
-    const [items, setItems] = useState([]);
+    const [translation, setTranslation] = useState('');
 
     async function fetcher(data) {
         const res = await fetch('/api/translate', {
@@ -25,7 +25,7 @@ export default function Page2() {
             'to': 'en;fr',
         });
         let finalRes = JSON.parse(response);
-        console.log(finalRes);
+        setTranslation(finalRes.result);
     }, [word]);
 
     return(
@@ -40,14 +40,12 @@ export default function Page2() {
                     <h1>Ejemplo de Use Effect</h1>
                     <p>Buscar en la api:</p>
                     <input className='border-solid border-2 pl-4 border-black' type='text' onChange={e => setWord(e.target.value)}/>
+                    <h2>Ingles</h2>
+                    <p>{translation.en}</p>
+                    <h2>Frances</h2>
+                    <p>{translation.fr}</p>
                 </div>
             </div>
-
-            <ul className="my-10">
-                {items.map((item, index) => {
-                    return <li key={index} className=''>{JSON.stringify(item)}</li>
-                })}
-            </ul>
         </>
     );
 }
