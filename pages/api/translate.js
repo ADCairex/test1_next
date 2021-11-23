@@ -21,8 +21,6 @@ async function post(req, res) {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        
-        console.log(body);
         res.json(body)
     });
 

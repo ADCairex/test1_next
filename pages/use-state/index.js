@@ -23,7 +23,7 @@ export default function Page1() {
                     <link rel='icon' href='/favicon.ico' />
                 </Head>
                 <Navbar />
-                <h1 className='m-auto my-4 text-2xl'>Ejemplo de Use state</h1>
+                <h1 className='m-auto my-4 text-4xl'>Ejemplo de Use state</h1>
                 <div className='flex m-auto'>
                     <button onClick={addCount} className='w-10 h-10 bg-red-300'>+</button>
                     <p className='m-auto mx-10'>{count}</p>
