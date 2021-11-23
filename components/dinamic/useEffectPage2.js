@@ -10,29 +10,22 @@ export default function Page2() {
     const [word, setWord] = useState('');
     const [items, setItems] = useState([]);
 
-    const apiCall = async () => {
+    async function fetcher(data) {
+        const res = await fetch('/api/translate', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data) 
+        })
+        return await res.text()
+      }
 
-        return await fetch("https://rimedia-translation.p.rapidapi.com/api_translate_limited.php", {
-            "method": "POST",
-            "headers": {
-                "content-type": "application/x-www-form-urlencoded",
-                "x-rapidapi-host": "rimedia-translation.p.rapidapi.com",
-                "x-rapidapi-key": "cbd567adeemshe681b53881b3b10p117203jsnf0728e95378e"
-            },
-            "body": {
-                "text": "Hello world try, HELLO",
-                "protected": "world;World",
-                "from": "en",
-                "to": "es;fr;ar",
-                "translate_capital": "true"
-            }
+    useEffect( async () => {
+        const response = await fetcher({
+            'text': word,
+            'to': 'en;fr',
         });
-    }
-
-    useEffect(() => {
-
-        return apiCall().then(response);
-        
+        let finalRes = JSON.parse(response);
+        console.log(finalRes);
     }, [word]);
 
     return(
