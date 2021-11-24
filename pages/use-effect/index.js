@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 // Important disable SSR
 import dynamic from 'next/dynamic'
 
@@ -6,7 +6,7 @@ const ComponentUE = dynamic(() => import('../../components/dinamic/useEffectPage
     ssr: false,
 });
 
-export default function Page2() {    
+export default function useEffect() {    
 
     return (
        <ComponentUE/>
