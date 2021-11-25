@@ -4,6 +4,22 @@ import { Navbar } from '../NavBar';
 import React, { useEffect, useState } from 'react';
 
 export default function eventListener() {
+    
+    const [mousePositionX, setMousePositionX] = useState(0);
+    const [mousePositionY, setMousePositionY] = useState(0);
+    
+    window.addEventListener('mousemove', e => {
+        setMousePositionX(e.offsetX);
+        setMousePositionY(e.offsetY);
+        
+        console.log(mousePositionX, mousePositionY);
+    }); 
+
+
+    /* useEffect(() => {
+            console.log(mousePosition);
+    }, mousePosition);
+    */
     return(
         <>
             <div className='flex flex-col'>
@@ -12,10 +28,9 @@ export default function eventListener() {
                     <link rel='icon' href='/favicon.ico' />
                 </Head>
                 <Navbar />
-                <h1>Drawing with mouse events</h1>
-                <canvas className='border-2 border-gray-900 h-96 w-96' id="myPics">
+                <div ref={div} className='w-10 h-10 bg-red-400 absolute'>
 
-                </canvas>
+                </div>
             </div>
         </>
     );
