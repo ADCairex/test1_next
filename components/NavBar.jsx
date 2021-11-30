@@ -61,9 +61,9 @@ export const Navbar = () => {
         </Link>
         <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in float-right ml-auto">
             <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" onChange={(e)=>setChecked(e.target.checked)}/>
-            <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
         </div>
-        <label for="toggle" class="text-xs text-gray-700">Dark mode</label>
+        <label for="toggle" className="text-xs text-gray-700">Dark mode</label>
       </nav>
     </>
   );

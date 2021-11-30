@@ -21,8 +21,8 @@ export default function eventListener() {
     }
     function eventChange(e) {
         //console.log(String(e.clientX));
-        setMousePositionX(String(e.clientX)+'px');
-        setMousePositionY(String(e.clientY)+'px');
+        setMousePositionX(String(10 + e.clientX)+'px');
+        setMousePositionY(String(10 + e.clientY)+'px');
 
         
         console.log(mousePositionX);
