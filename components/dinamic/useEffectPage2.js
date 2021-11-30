@@ -15,7 +15,7 @@ export default function Page2() {
           body: JSON.stringify(data) 
         })
         return await res.text()
-      }
+    }
 
     useEffect( async () => {
         const response = await fetcher({
