@@ -66,6 +66,13 @@ export const Navbar = () => {
                 </span>
             </a>
         </Link>
+        <Link href='/use-memo'>
+            <a className='inline-flex items-center p-2 ml-4 '>
+                <span className='text-xs text-white font-bold uppercase tracking-wide'>
+                    use memo
+                </span>
+            </a>
+        </Link>
         <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in float-right ml-auto">
             <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" onChange={(e)=>setChecked(e.target.checked)}/>
             <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
